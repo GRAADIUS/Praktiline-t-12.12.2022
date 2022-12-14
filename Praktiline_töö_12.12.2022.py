@@ -1,15 +1,27 @@
 from math import *
 from random import *
 #1
-C=float(input("введите длину окружности: "))
-D=round(C/pi,2)
-print("диаметр дерева:", D)
+try: #если можно выполнить
+    C=float(input("введите длину окружности: "))
+    if C>0:
+        D=round(C/pi,2)
+        print("диаметр дерева:", D)
+    else:
+        print("число не меньше нуля")
+except:
+    print("не верный формат")
 print()
 #2
-A=float(input("введите ширину участка:"))
-B=float(input("введите длину участка:"))
-D=round(sqrt(A**2+B**2),2)
-print("диагональ участка:",D)
+try:
+    A=float(input("введите ширину участка:"))
+    B=float(input("введите длину участка:"))
+    if A>0 and B>0:
+        D=round(sqrt(A**2+B**2),2)
+        print(f"диагональ участка: {D}")
+    else:
+        print("числа не меньше нуля")
+except:
+    print("none")
 print()
 #3
 aeg=float(input("Сколько часов ехали? "))
@@ -47,21 +59,18 @@ print=(f"{P}-st, igaüks maksab {summa}")
 #8
 litrid=float(input("литры заправленного топлива:"))
 kilomeetrid=float(input("пройденные километры:"))
-km=(litrid/kilomeetrid)*100
-print(f"kütusekulu {km}")
+km=round((litrid/kilomeetrid)*100,2)
+print(f"kutusekulu {km}")
 print()
 #9
 m=int(input("minutid:"))
 m=m/60
 tee=m*29,9
 print(f"jõuab {tee} km")
+print()
 #10
 m=int(input("sisesta ´aja minutes"))
+h=m//60
 
-
-
-
-
-
-
-
+m=m%60
+print(f"{h}:{m}")
